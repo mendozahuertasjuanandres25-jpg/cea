@@ -3,24 +3,44 @@
   --color-brand: #173d35;
   --color-brand-strong: #0e2c26;
   --color-accent: #d7ed9f;
-  --color-surface: #f5f7f3;
-  --color-text: #1d2925;
+  --color-surface: #f4f7f4;
+  --color-text: #17231e;
   --color-muted: #61706a;
-  --color-border: #dfe6e1;
-  --radius-card: 1rem;
-  --shadow-card: 0 0.75rem 2rem rgba(23, 61, 53, 0.08);
+  --color-border: #e1e8e3;
+  --radius-card: 1.25rem;
+  --shadow-card: 0 0.75rem 2rem rgba(23, 61, 53, 0.07);
+  --shadow-hover: 0 1rem 2.25rem rgba(23, 61, 53, 0.13);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background: linear-gradient(180deg, #fbfcfb 0%, var(--color-surface) 100%);
+  color: var(--color-text);
+  font-family: Inter, "Segoe UI", system-ui, -apple-system, sans-serif;
+  line-height: 1.65;
+  min-height: 100vh;
 }
 
 .brand {
+  align-items: center;
   color: var(--color-brand);
+  display: inline-flex;
   font-size: 1.25rem;
   font-weight: 800;
+  gap: 0.4rem;
   letter-spacing: -0.04em;
+  padding-block: 0.35rem;
 }
 
 .brand span {
-  color: var(--color-muted);
+  background: var(--color-accent);
+  border-radius: 0.5rem;
+  color: var(--color-brand-strong);
   font-weight: 500;
+  padding: 0.1rem 0.45rem;
 }
 
 .btn-primary {
@@ -32,9 +52,15 @@
   --bs-btn-active-border-color: var(--color-brand-strong);
   --bs-btn-disabled-bg: var(--color-brand);
   --bs-btn-disabled-border-color: var(--color-brand);
-  border-radius: 0.65rem;
+  border-radius: 0.75rem;
   font-weight: 650;
-  padding: 0.75rem 1.15rem;
+  padding: 0.8rem 1.3rem;
+  transition: box-shadow 160ms ease, transform 160ms ease;
+}
+
+.btn-primary:not(:disabled):hover {
+  box-shadow: 0 0.5rem 1.25rem rgba(14, 44, 38, 0.2);
+  transform: translateY(-1px);
 }
 
 .module-card,
@@ -43,46 +69,78 @@
   background: #fff;
   border: 1px solid var(--color-border);
   border-radius: var(--radius-card);
-  box-shadow: var(--shadow-card);
+  box-shadow: 0 0.5rem 1.5rem rgba(23, 61, 53, 0.055);
 }
 
 .module-card {
   color: inherit;
   display: block;
   height: 100%;
-  padding: 1.4rem;
+  min-height: 9rem;
+  overflow: hidden;
+  padding: 1.5rem;
+  position: relative;
   text-decoration: none;
-  transition: border-color 160ms ease, transform 160ms ease;
+  transition: border-color 180ms ease, box-shadow 180ms ease, transform 180ms ease;
+}
+
+.module-card::after {
+  align-items: center;
+  background: #edf4ee;
+  border-radius: 50%;
+  color: var(--color-brand);
+  content: "↗";
+  display: flex;
+  font-size: 1rem;
+  height: 2rem;
+  justify-content: center;
+  position: absolute;
+  right: 1.25rem;
+  top: 1.25rem;
+  transition: background-color 180ms ease, transform 180ms ease;
+  width: 2rem;
 }
 
 .module-card:hover,
 .module-card:focus-visible {
   border-color: var(--color-brand);
+  box-shadow: var(--shadow-hover);
   color: inherit;
-  transform: translateY(-2px);
+  transform: translateY(-4px);
+}
+
+.module-card:hover::after,
+.module-card:focus-visible::after {
+  background: var(--color-accent);
+  transform: translate(2px, -2px);
 }
 
 .module-card h3 {
   font-size: 1.1rem;
   font-weight: 700;
-  margin-bottom: 0.45rem;
+  margin-bottom: 0.55rem;
 }
 
 .module-card span,
 .form-note {
   color: var(--color-muted);
   font-size: 0.92rem;
+  line-height: 1.5;
 }
 
 .placeholder-card,
 .form-card {
   margin-inline: auto;
   max-width: 42rem;
-  padding: clamp(1.5rem, 5vw, 3rem);
+  padding: clamp(1.75rem, 5vw, 3.25rem);
 }
 
 .form-card {
   max-width: 31rem;
+}
+
+.placeholder-card {
+  border-top: 4px solid var(--color-brand);
 }
 
 .form-card h1,
@@ -92,50 +150,81 @@
   letter-spacing: -0.04em;
 }
 
-* {
-  box-sizing: border-box;
-}
-
-body {
-  background: var(--color-surface);
-  color: var(--color-text);
-  font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
-  line-height: 1.6;
-  min-height: 100vh;
-}
-
 .site-header {
-  background: rgba(255, 255, 255, 0.94);
+  backdrop-filter: blur(14px);
+  background: rgba(255, 255, 255, 0.9);
   border-bottom: 1px solid var(--color-border);
+  position: sticky;
+  top: 0;
+  z-index: 1020;
 }
 
 .site-header .navbar {
-  min-height: 4.5rem;
+  min-height: 4.75rem;
 }
 
 .site-header .nav-link {
   color: var(--color-text);
-  font-weight: 550;
+  font-weight: 600;
+  transition: color 160ms ease;
+}
+
+.site-header .nav-link:hover,
+.site-header .nav-link:focus-visible {
+  color: var(--color-brand);
 }
 
 .hero {
   align-items: center;
+  background: linear-gradient(135deg, #fff 0%, #f0f6f0 100%);
+  border: 1px solid rgba(23, 61, 53, 0.08);
+  border-radius: clamp(1.25rem, 3vw, 2rem);
   display: flex;
-  min-height: min(34rem, 68vh);
-  padding-block: 4rem;
+  margin-bottom: 2rem;
+  margin-top: 2rem;
+  min-height: min(35rem, 70vh);
+  overflow: hidden;
+  padding: clamp(3rem, 8vw, 6.5rem);
+  position: relative;
+  box-shadow: var(--shadow-card);
+}
+
+.hero::after {
+  background: radial-gradient(circle, rgba(215, 237, 159, 0.65) 0%, rgba(215, 237, 159, 0) 70%);
+  border-radius: 50%;
+  content: "";
+  height: min(34rem, 75vw);
+  pointer-events: none;
+  position: absolute;
+  right: -10rem;
+  top: -13rem;
+  width: min(34rem, 75vw);
 }
 
 .hero-content {
   max-width: 44rem;
+  position: relative;
+  z-index: 1;
 }
 
 .eyebrow {
+  align-items: center;
   color: var(--color-brand);
+  display: flex;
   font-size: 0.78rem;
   font-weight: 750;
+  gap: 0.55rem;
   letter-spacing: 0.1em;
   margin-bottom: 0.7rem;
   text-transform: uppercase;
+}
+
+.eyebrow::before {
+  background: var(--color-brand);
+  border-radius: 50%;
+  content: "";
+  height: 0.45rem;
+  width: 0.45rem;
 }
 
 .hero h1 {
@@ -158,7 +247,7 @@ body {
 }
 
 .section-heading {
-  margin-bottom: 1.5rem;
+  margin-bottom: 1.75rem;
 }
 
 .section-heading h2 {
@@ -188,31 +277,47 @@ body {
 
 .form-control {
   border-color: var(--color-border);
-  border-radius: 0.6rem;
-  min-height: 2.9rem;
+  border-radius: 0.7rem;
+  min-height: 3rem;
+  padding-inline: 0.9rem;
 }
 
 .form-control:focus {
   border-color: var(--color-brand);
-  box-shadow: 0 0 0 0.2rem rgba(23, 61, 53, 0.14);
+  box-shadow: 0 0 0 0.22rem rgba(23, 61, 53, 0.13);
+}
+
+a:focus-visible,
+button:focus-visible {
+  outline: 3px solid rgba(23, 61, 53, 0.45);
+  outline-offset: 3px;
 }
 
 .site-footer {
-  background: #fff;
+  background: rgba(255, 255, 255, 0.75);
   border-top: 1px solid var(--color-border);
   color: var(--color-muted);
   font-size: 0.9rem;
-  padding-block: 1.25rem;
+  padding-block: 1.5rem;
 }
 
 @media (max-width: 575.98px) {
   .hero {
-    min-height: 26rem;
-    padding-block: 3rem;
+    min-height: 25rem;
+    padding: 2.5rem 1.5rem;
+  }
+
+  .hero::after {
+    right: -12rem;
+    top: -10rem;
   }
 
   .section-block {
     padding-bottom: 3rem;
+  }
+
+  .module-card {
+    min-height: 8rem;
   }
 }
 
