@@ -1,0 +1,12 @@
+:root {
+  color-scheme: light;
+  --color-brand: #173d35;
+  --color-brand-strong: #0e2c26;
+  --color-accent: #d7ed9f;
+  --color-surface: #f5f7f3;
+  --color-text: #1d2925;
+  --color-muted: #61706a;
+  --color-border: #dfe6e1;
+  --radius-card: 1rem;
+  --shadow-card: 0 0.75rem 2rem rgba(23, 61, 53, 0.08);
+}
