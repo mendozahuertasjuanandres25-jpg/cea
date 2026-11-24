@@ -1,0 +1,19 @@
+@media (max-width: 575.98px) {
+  .hero {
+    min-height: 26rem;
+    padding-block: 3rem;
+  }
+
+  .section-block {
+    padding-bottom: 3rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
+}
