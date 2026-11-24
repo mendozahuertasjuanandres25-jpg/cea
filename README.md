@@ -1,5 +1,4 @@
 # CEA Vía
-
 Plataforma web para apoyar la gestión de una academia de conducción: acceso, perfiles, usuarios y roles, matrículas, documentos y pagos.
 
 > **Estado del diseño:** el enlace de Figma requiere iniciar sesión y no permitió consultar el prototipo. La estructura de esta etapa parte de los módulos descritos y queda pendiente de validación visual y de flujos contra el diseño.
@@ -95,5 +94,3 @@ Las páginas de módulos son esqueletos de navegación, no implementaciones comp
 - **Autenticación y pagos:** no conectados a servicios reales.
 
 ## Tecnologías previstas para futuras etapas
-
-**Java no se utiliza en esta etapa.** Su posible uso para el backend corresponde a una fase futura. La elección de framework, base de datos, contratos API, autenticación e integración de pagos queda pendiente de decisiones del proyecto. No se incluye Java, Spring Boot, Maven ni servicios backend en esta entrega.
