@@ -58,10 +58,7 @@ CEA/
 │   ├── icons/
 │   └── fonts/
 ├── css/
-│   ├── variables.css
-│   ├── components.css
-│   ├── style.css
-│   └── responsive.css
+│   └── style.css
 ├── js/
 │   ├── main.js
 │   └── validation.js
@@ -86,7 +83,7 @@ Las páginas de módulos son esqueletos de navegación, no implementaciones comp
 ## Arquitectura frontend
 
 - Cada página HTML mantiene su estructura separada de las hojas de estilo y los scripts.
-- `variables.css` centraliza tokens visuales; `components.css` reúne estilos reutilizables; `style.css` contiene estilos generales y `responsive.css` ajustes por tamaño de pantalla.
+- `style.css` reúne las variables de color y diseño, los componentes reutilizables, los estilos generales y las reglas responsive.
 - `main.js` y `validation.js` quedan reservados para interacciones frontend sencillas. No realizan llamadas a servicios ni guardan datos.
 - La descripción de responsabilidades y los límites de esta arquitectura están en [`docs/arquitectura.md`](docs/arquitectura.md).
 
