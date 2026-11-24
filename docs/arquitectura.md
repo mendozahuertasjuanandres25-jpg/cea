@@ -7,7 +7,7 @@ La aplicación de esta etapa es un frontend estático. El enlace de Figma compar
 ## Capas y responsabilidades
 
 - **Páginas (`index.html`, `pages/`):** estructura y contenido semántico de cada vista.
-- **Estilos (`css/`):** variables visuales, componentes reutilizables, reglas generales y ajustes responsive.
+- **Estilos (`css/style.css`):** variables visuales, componentes reutilizables, reglas generales y ajustes responsive en una sola hoja de estilos.
 - **Scripts (`js/`):** espacio reservado para interacciones y validaciones sencillas que no requieran backend.
 - **Recursos (`assets/`):** imágenes, iconos y fuentes propios del proyecto.
 - **Documentación (`docs/`):** decisiones, arquitectura y guías del proyecto.
