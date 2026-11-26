@@ -1,5 +1,9 @@
+<<<<<<< Updated upstream
 # CEA Vía
 Plataforma web para apoyar la gestión de una academia de conducción: acceso, perfiles, usuarios y roles, matrículas, documentos y pagos.
+=======
+# proyecto cea
+>>>>>>> Stashed changes
 
 > **Estado del diseño:** el enlace de Figma requiere iniciar sesión y no permitió consultar el prototipo. La estructura de esta etapa parte de los módulos descritos y queda pendiente de validación visual y de flujos contra el diseño.
 
