@@ -1,3 +1,10 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
 :root {
   --color-azulnoche: #07182f;
   --color-azul: #10294b;
@@ -9,6 +16,9 @@
 
 
 
+
+
+
 .fondo-home {
   background-color: var(--color-fondo);
   min-height: 100vh;
@@ -16,10 +26,9 @@
 
 .navbar {
   background-color: var(--color-azul);
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
   justify-content: space-between;
-  color: var(--color-blanco);
-  font-size: 18px;
   align-items: center;
   padding: 20px 40px;
   position: relative;
@@ -33,13 +42,49 @@
   
 }
 
+.menu a{
+
+  color: var(--color-blancomarfil);
+  text-decoration: none;
+  font-size: 12px;
+  font-weight: 500;
+  text-transform: uppercase;
+  transition: transform 0.2s ease;
+}
+
+.menu a:hover{
+  color: var(--color-dorado);
+  transform: translate(0px, -2px);
+}
+
 .logo{
-  position: absolute;
-  left: 20px;
+  justify-self: start;
 }
 
 .logo img{
-  width: 130px;
   height: 40px;
-  object-fit: contain;
+  display: block;
 }
+
+
+
+.login{
+  justify-self: end;
+  background-color: var(--color-dorado);
+  color:var(--color-azulnoche);
+  padding: 10px 20px;
+  border-radius: 6px;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: transform 0.2s ease;
+}
+
+.login:hover{
+  filter:brightness(1.08);
+  transform: translate(0px, -2px);
+}
+
+
+
